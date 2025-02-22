@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "tsc -b && vite build",
+    "build2": "tsc -b && vite build",
     "lint": "eslint src/**/*.ts* --fix",
     "preview": "vite preview",
     "dev": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build": "storybook build",
     "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
