@@ -1,6 +1,6 @@
 import { Button, ButtonProps } from '@ignite-ui/react'
+import { ArrowRight } from '@phosphor-icons/react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { ArrowRight } from 'phosphor-react'
 
 export default {
   title: 'Form/Button',
@@ -59,7 +59,7 @@ export const WithIcon: StoryObj<ButtonProps> = {
     children: (
       <>
         Proximo Passo
-        <ArrowRight weight="bold" size={20} />
+        <ArrowRight width={32} height={32} />
       </>
     ),
   },
