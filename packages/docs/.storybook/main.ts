@@ -20,6 +20,8 @@ const config: StorybookConfig = {
     '@storybook/addon-onboarding',
     '@storybook/addon-essentials',
     '@storybook/addon-docs',
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
     '@chromatic-com/storybook',
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
