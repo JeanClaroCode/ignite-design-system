@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "@mdx-js/react": "^3.1.0",
+    "@storybook/addon-docs": "^8.5.5"
+  },
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build"
+  },
+  "devDependencies": {
+    "turbo": "^2.4.2"
+  },
+  "packageManager": "npm@10.0.0"
+}
