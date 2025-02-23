@@ -18,6 +18,7 @@ const config: StorybookConfig = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@chromatic-com/storybook',
+    '@storybook/addon-mdx-gfm',
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
   ],
@@ -25,18 +26,11 @@ const config: StorybookConfig = {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
-  typescript:{
-    reactDocgen: 'react-docgen-typescript'
-  },
   viteFinal: (config, { configType }) => {
-    console.log(`CONFIG TYPE: ${configType}`)
-    console.log(`CONFIG: ${config}`)
-
     if (configType === 'PRODUCTION') {
-      config.base = '/ignite-design-system/'
-    } // teste 3
-
-    return config
+      config.base = '/ignite-design-system/' // Correção: acessa config.base
+    }
+    return config // Retorna o objeto config modificado
   },
 }
 export default config
