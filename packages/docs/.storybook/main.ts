@@ -29,13 +29,12 @@ const config: StorybookConfig = {
     options: {},
   },
   viteFinal: async (config, { configType }) => {
-    // Import the necessary plugin
     const { defineConfig } = await import('vite')
 
     return defineConfig({
       ...config,
-      base: '/ignite-design-system/', 
+      base: '/ignite-design-system/', // <--- Barra inicial e nome do repositório
     })
-  }
+  },
 }
 export default config
