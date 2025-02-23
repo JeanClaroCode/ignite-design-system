@@ -24,8 +24,6 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Fix paths
-        run: npm run fix-paths
 
       - name: Deploy Storybook
         working-directory: ./packages/docs

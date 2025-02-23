@@ -9,8 +9,7 @@
     "preview": "vite preview",
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
-    "deploy-storybook": "storybook-to-ghpages --existing-output-dir=storybook-static && node fix-paths.js",
-    "fix-paths": "node fix-paths.js"
+    "deploy-storybook": "storybook-to-ghpages --existing-output-dir=storybook-static && node fix-paths.js"
   },
   "dependencies": {
     "@ignite-ui/eslint-config": "*",
