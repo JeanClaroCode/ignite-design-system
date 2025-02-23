@@ -31,7 +31,7 @@ const config: StorybookConfig = {
 
     if (configType === 'PRODUCTION') {
       config.base = '/ignite-design-system/'
-    }
+    } // teste
 
     return config
   },
