@@ -14,7 +14,6 @@ const config: StorybookConfig = {
   stories: [
     '../src/**/*.mdx',
     '../src/**/*.stories.@(js|jsx|ts|tsx)',
-    '../src/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
     '@storybook/addon-onboarding',
@@ -25,6 +24,9 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
   ],
+  core: {
+    builder: "webpack5",
+  },
   framework: {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},
