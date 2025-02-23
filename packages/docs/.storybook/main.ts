@@ -18,7 +18,6 @@ const config: StorybookConfig = {
   ],
   addons: [
     '@storybook/addon-onboarding',
-    '@storybook/addon-essentials',
     '@storybook/addon-docs',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -32,8 +31,9 @@ const config: StorybookConfig = {
   },
   viteFinal: (config, { configType }) => {
     if (configType === 'PRODUCTION') {
-      config.base = '/ignite-design-system/'
+      config.base = './'
     }
+
     return config
   },
 }
