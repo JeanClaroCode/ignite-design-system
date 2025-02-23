@@ -30,15 +30,13 @@ const config: StorybookConfig = {
     options: {},
   },
   viteFinal: async (config, { configType }) => {
-    if (configType === 'PRODUCTION') {
-      config.base = '/ignite-design-system/' // Define o caminho base correto
-      config.build = {
-        ...config.build,
-        outDir: 'storybook-static', // Garante que os arquivos sejam gerados na pasta correta
-        assetsInlineLimit: 0, // Evita problemas com assets inline
-      }
-    }
-    return config
-  },
+    // Import the necessary plugin
+    const { defineConfig } = await import('vite')
+
+    return defineConfig({
+      ...config,
+      base: '/ignite-design-system/', 
+    })
+  }
 }
 export default config

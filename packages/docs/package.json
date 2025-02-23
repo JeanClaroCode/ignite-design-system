@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
-    "deploy-storybook": "storybook-to-ghpages",
+    "deploy-storybook": "gh-pages --dir storybook-static --base /ignite-design-system/",
     "build-storybook": "build-storybook -s public"
   },
   "dependencies": {
