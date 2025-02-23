@@ -11,7 +11,7 @@ function getAbsolutePath(value: string): any {
   return dirname(require.resolve(join(value, 'package.json')))
 }
 const config: StorybookConfig = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
   addons: [
     '@storybook/addon-onboarding',
     '@storybook/addon-docs',
@@ -24,6 +24,9 @@ const config: StorybookConfig = {
   framework: {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},
+  },
+  typescript:{
+    reactDocgen: 'react-docgen-typescript'
   },
   viteFinal: (config, { configType }) => {
     console.log(`CONFIG TYPE: ${configType}`)
