@@ -1,6 +1,7 @@
 import type { StorybookConfig } from '@storybook/react-vite'
 
 import { join, dirname } from 'path'
+import { mergeConfig } from 'vite'
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -38,15 +39,10 @@ const config: StorybookConfig = {
     // See https://storybook.js.org/docs/api/main-config/main-config-typescript for more information about this option.
     reactDocgen: 'react-docgen-typescript',
   },
-  viteFinal: (config, { configType }) => {
-    console.log('viteFinal executado') // Verifique se a função está sendo chamada
-    if (configType === 'PRODUCTION') {
-      console.log('ConfigType é PRODUÇÃO') // Verifique se a condição é satisfeita
-      config.base = '/ignite-design-system/'
-      console.log('Config.base definido como:', config.base) // Verifique o valor de config.base
-    }
-    console.log('Config após modificação:', config) // Log do objeto config completo
-    return config
+  viteFinal: async (config, { configType }) => {
+    return mergeConfig(config, {
+      base: configType === 'PRODUCTION' ? '/ignite-design-system/' : '/', // Mesma lógica do vite.config.js
+    })
   },
 }
 export default config
