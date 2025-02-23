@@ -31,6 +31,9 @@ const config: StorybookConfig = {
     name: '@storybook/react-vite',
     options: {},
   },
+  docs: {
+    autodocs: true,
+  },
   core: {
     builder: '@storybook/builder-vite', // 👈 The builder enabled here.
   },
@@ -39,10 +42,12 @@ const config: StorybookConfig = {
     // See https://storybook.js.org/docs/api/main-config/main-config-typescript for more information about this option.
     reactDocgen: 'react-docgen-typescript',
   },
-  viteFinal: async (config, { configType }) => {
-    return mergeConfig(config, {
-      base: configType === 'PRODUCTION' ? '/ignite-design-system/' : '/',
-    })
+  viteFinal: (config, { configType }) => {
+    if (configType === 'PRODUCTION') {
+      config.base = '/ignite-design-system/'
+    }
+
+    return config
   },
 }
 export default config
