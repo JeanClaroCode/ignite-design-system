@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: 'storybook-static', // Storybook gera os arquivos aqui
-    assetsDir: 'assets', // Mantém os assets organizados
+    outDir: 'storybook-static',
+    assetsDir: 'assets',
   },
 })
