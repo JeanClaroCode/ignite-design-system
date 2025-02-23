@@ -6,4 +6,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: '/ignite-design-system/',
   plugins: [react()],
+  build: {
+    outDir: 'storybook-static', // Storybook gera os arquivos aqui
+    assetsDir: 'assets', // Mantém os assets organizados
+  },
 })

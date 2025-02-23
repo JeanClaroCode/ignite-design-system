@@ -29,9 +29,14 @@ const config: StorybookConfig = {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
-  viteFinal: (config, { configType }) => {
+  viteFinal: async (config, { configType }) => {
     if (configType === 'PRODUCTION') {
-      config.base = '/ignite-design-system/'
+      config.base = '/ignite-design-system/' // Define o caminho base correto
+      config.build = {
+        ...config.build,
+        outDir: 'storybook-static', // Garante que os arquivos sejam gerados na pasta correta
+        assetsInlineLimit: 0, // Evita problemas com assets inline
+      }
     }
     return config
   },
