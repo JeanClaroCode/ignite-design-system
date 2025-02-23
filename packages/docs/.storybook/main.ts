@@ -25,13 +25,12 @@ const config: StorybookConfig = {
     name: getAbsolutePath('@storybook/react-vite'),
     options: {},
   },
-  viteFinal: async (config, { configType }) => {
-    const { defineConfig } = await import('vite')
+  viteFinal: (config, { configType }) => {
+    if (configType === 'PRODUCTION') {
+      config.base = '/ignite-design-system/'
+    }
 
-    return defineConfig({
-      ...config,
-      base: '/ignite-design-system/', // <--- Barra inicial e nome do repositório
-    })
+    return config
   },
 }
 export default config
