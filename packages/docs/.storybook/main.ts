@@ -41,7 +41,7 @@ const config: StorybookConfig = {
   },
   viteFinal: async (config, { configType }) => {
     return mergeConfig(config, {
-      base: configType === 'PRODUCTION' ? '/ignite-design-system/' : '/', // Mesma lógica do vite.config.js
+      base: configType === 'PRODUCTION' ? '/ignite-design-system/' : '/',
     })
   },
 }
