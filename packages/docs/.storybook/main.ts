@@ -27,7 +27,7 @@ const config: StorybookConfig = {
     '@storybook/addon-a11y',
   ],
   framework: {
-    name: getAbsolutePath('@storybook/react-vite'),
+    name: '@storybook/react-vite',
     options: {},
   },
   core: {
@@ -39,10 +39,14 @@ const config: StorybookConfig = {
     reactDocgen: 'react-docgen-typescript',
   },
   viteFinal: (config, { configType }) => {
+    console.log('viteFinal executado') // Verifique se a função está sendo chamada
     if (configType === 'PRODUCTION') {
-      config.base = '/ignite-design-system/' // Correção: acessa config.base
+      console.log('ConfigType é PRODUÇÃO') // Verifique se a condição é satisfeita
+      config.base = '/ignite-design-system/'
+      console.log('Config.base definido como:', config.base) // Verifique o valor de config.base
     }
-    return config // Retorna o objeto config modificado
+    console.log('Config após modificação:', config) // Log do objeto config completo
+    return config
   },
 }
 export default config
